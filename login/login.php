@@ -20,6 +20,12 @@ if (isset($_POST["submit"])){
     <title>Document</title>
 </head>
 <body>
+    <h2>Login</h2>
+    <!-- pesan error -->
+    <?php if (isset($error)):?>
+        <p style="color: red; font-style: italic;">usernme/password salah</p>
+    <?php endif;?>
+
     <form action="" method="post">
     <label for="username">username : </label>
     <input type="text" name="username" id="username">
