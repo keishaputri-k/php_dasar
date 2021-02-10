@@ -7,10 +7,10 @@ $mahasiswa= [
     ["Harvey", "23892399183", "Hukum", "harveycantwell@gmail.com"],
     ["Louis", "90283827913", "Tehnik Informatika", "louispartidge@gmail.com"]
 ];
-//nyetak email louis
+//output email louis
 echo $mahasiswa[2][3];
 echo "<br>";
-//nyetak nama harvey
+//output name harvey
 echo $mahasiswa[1][0]
 ?>
 

@@ -1,4 +1,11 @@
 <?php 
+//if
+$t = date("H");
+
+if($t < "20"){
+  echo "Have a good day!";
+}
+echo "<p>";
 //if else
 $x = 30;
 if($x <20){

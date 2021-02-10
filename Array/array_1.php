@@ -8,10 +8,10 @@ $bulan = ["Januari", "Februari", "Maret"];
 $random = ["Januari", 123, true];
 var_dump($bulan);
 echo "</p>";
-//cara pemanggilan array
+//call array
 echo $bulan[0];
 echo "</p>";
-//cara menambahkan array
+//add array
 $bulan[] = "April";
 $bulan[] = "Mei";
 var_dump($bulan);
