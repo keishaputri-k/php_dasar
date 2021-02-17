@@ -1,3 +1,22 @@
+<?php
+//koneksi ke database
+//(host, user, password, namadatabase)
+$db = mysqli_connect("localhost", "root", "", "db_phpdasar");
+
+//ambil data dr table
+$result = mysqli_query($db, "SELECT * FROM tb_siswa");
+// var_dump($result);
+
+//ambil data (fetch) siswa
+// mysqli_fetch_row()
+// mysqli_fetch_assoc()
+// mysqli_fetch_array()
+// mysqli_fetch_object()
+// while($resultsiswa = mysqli_fetch_assoc($result)){
+// var_dump($resultsiswa);
+// };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,41 +37,18 @@
             <th>Kelas</th>
             <th>Email</th>
         </tr>
+        <?php $i = 1;?>
+        <?php while($row = mysqli_fetch_assoc($result)):?>
         <tr>
-            <td>1</td>
-            <td><img src="img/ivanmartinez.jpeg" width="100"></td>
-            <td>Ivan José Martínez Pérez</td>
-            <td>XI RPL A</td>
-            <td>ivanmartinez@gmail.com</td>
+            <td><?=$i?></td>
+            <td><img src="img/<?=$row["gambar_siswa"];?>" width="50"></td>
+            <td><?=$row["nama_siswa"];?></td>
+            <td><?=$row["kelas_siswa"];?></td>
+            <td><?=$row["email_siswa"];?></td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td><img src="img/luispatridge.jpeg" width="100"></td>
-            <td>Louis Partridge</td>
-            <td>XI RPL A</td>
-            <td>louispatridge@gmail.com</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><img src="img/mikeymurphy.jpeg" width="100"></td>
-            <td>Michael J. Murphy</td>
-            <td>XI RPL B</td>
-            <td>mikeymurphy@gmail.com</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><img src="img/herofiennes-tiffin.jpeg" width="100"></td>
-            <td>Hero Beauregard Faulkner Fiennes Tiffin</td>
-            <td>XI RPL D</td>
-            <td>herofinneastiffin@gmail.com</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td><img src="img/harveycantwell.jpeg" width="100"></td>
-            <td>Harvey Leigh Cantwell</td>
-            <td>XI RPL D</td>
-            <td>harveycantwell@gmail.com</td>
-        </tr>
+        <?php $i++ ?>
+        <?php endwhile;?>
+        
     </table>
 </body>
 
