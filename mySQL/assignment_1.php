@@ -14,7 +14,7 @@ $data = mysqli_query($db, "SELECT * FROM tb_movie");
 </head>
 <body>
 <h1>Movies</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border= "1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No</th>
             <th>Poster</th>
@@ -37,7 +37,6 @@ $data = mysqli_query($db, "SELECT * FROM tb_movie");
         </tr>
         <?php $i++ ?>
         <?php endwhile;?>
-        
     </table>
 </body>
 </html>
