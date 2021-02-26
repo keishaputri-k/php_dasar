@@ -1,7 +1,20 @@
 <?php
-require 'functions.php';
+//koneksi ke database
+//(host, user, password, namadatabase)
+$db = mysqli_connect("localhost", "root", "", "db_phpdasar");
+
 //ambil data dr table
-$siswa = query("SELECT * FROM tb_siswa");
+$result = mysqli_query($db, "SELECT * FROM tb_siswa");
+// var_dump($result);
+
+//ambil data (fetch) siswa
+// mysqli_fetch_row()
+// mysqli_fetch_assoc()
+// mysqli_fetch_array()
+// mysqli_fetch_object()
+// while($resultsiswa = mysqli_fetch_assoc($result)){
+// var_dump($resultsiswa);
+// };
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +38,7 @@ $siswa = query("SELECT * FROM tb_siswa");
             <th>Email</th>
         </tr>
         <?php $i = 1;?>
-        <?php foreach($siswa as $row):?>
+        <?php while($row = mysqli_fetch_assoc($result)):?>
         <tr>
             <td><?=$i?></td>
             <td><img src="img/<?=$row["gambar_siswa"];?>" width="50"></td>
@@ -34,7 +47,7 @@ $siswa = query("SELECT * FROM tb_siswa");
             <td><?=$row["email_siswa"];?></td>
         </tr>
         <?php $i++ ?>
-        <?php endforeach;?>
+        <?php endwhile;?>
         
     </table>
 </body>

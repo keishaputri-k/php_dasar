@@ -16,9 +16,12 @@ $siswa = query("SELECT * FROM tb_siswa");
 
 <body>
     <h1>Daftar Siswa</h1>
+    <a href="tambah.php">Tambah Data Siswa</a>
+    <p>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No</th>
+            <th>Aksi</th>
             <th>Gambar</th>
             <th>Nama</th>
             <th>Kelas</th>
@@ -28,6 +31,10 @@ $siswa = query("SELECT * FROM tb_siswa");
         <?php foreach($siswa as $row):?>
         <tr>
             <td><?=$i?></td>
+            <td>
+                <a href="">Ubah | </a>
+                <a href="">Hapus</a>
+            </td>
             <td><img src="img/<?=$row["gambar_siswa"];?>" width="50"></td>
             <td><?=$row["nama_siswa"];?></td>
             <td><?=$row["kelas_siswa"];?></td>
