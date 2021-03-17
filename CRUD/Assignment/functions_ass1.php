@@ -14,7 +14,7 @@ function query($query){
 }
 function tambah($post){
     global $db;
-    //ambil data dr tiap elemendalam form
+    //ambil data dr tiap elemen dalam form
     $poster = $post["poster_movie"];
     $name = $post["name_movie"];
     $genre = $post["genre_movie"];

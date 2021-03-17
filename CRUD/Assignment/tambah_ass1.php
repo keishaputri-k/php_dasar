@@ -32,23 +32,23 @@ if(isset($_POST["submit"])){
 <body>
     <h1>Add Movie</h1>
     <form action="" method="post">
-        <label for="poster_siswa">Poster : </label>
-        <input type="text" name="poster_siswa" id="poster_siswa" required></input>
+        <label for="poster_movie">Poster : </label>
+        <input type="text" name="poster_movie" id="poster_movie" required></input>
         <p>
-        <label for="name_siswa">Name : </label>
-        <input type="text" name="name_siswa" id="name_siswa" required></input>
+        <label for="name_movie">Name : </label>
+        <input type="text" name="name_movie" id="name_movie" required></input>
         <p>
-        <label for="genre_siswa">Genre : </label>
-        <input type="text" name="genre_siswa" id="genre_siswa" required></input>
+        <label for="genre_movie">Genre : </label>
+        <input type="text" name="genre_movie" id="genre_movie" required></input>
         <p>
-        <label for="director_siswa">Director : </label>
-        <input type="text" name="director_siswa" id="director_siswa" required></input>
+        <label for="director_movie">Director : </label>
+        <input type="text" name="director_movie" id="director_movie" required></input>
         <p>
-        <label for="distributor_siswa">Production : </label>
-        <input type="text" name="distributor_siswa" id="distributor_siswa" required></input>
+        <label for="distributor_movie">Production : </label>
+        <input type="text" name="distributor_movie" id="distributor_movie" required></input>
         <p>
-        <label for="imdb_siswa">IMDB : </label>
-        <input type="text" name="imdb_siswa" id="imdb_siswa" required></input>
+        <label for="imdb_movie">IMDB : </label>
+        <input type="text" name="imdb_movie" id="imdb_movie" required></input>
         <p>
         <button type="submit" name="submit"> Submit </button>
     </form>

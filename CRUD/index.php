@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 //ambil data dr table
-$siswa = query("SELECT * FROM tb_siswa");
+$siswa = get("SELECT * FROM tb_siswa");
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +32,8 @@ $siswa = query("SELECT * FROM tb_siswa");
         <tr>
             <td><?=$i?></td>
             <td>
-                <a href="">Ubah | </a>
-                <a href="">Hapus</a>
+                <a href="ubah.php? id=<?= $row["id_siswa"];?>">Ubah</a> |
+                <a href="hapus.php? id=<?= $row["id_siswa"];?>">Hapus</a>
             </td>
             <td><img src="img/<?=$row["gambar_siswa"];?>" width="50"></td>
             <td><?=$row["nama_siswa"];?></td>
