@@ -1,7 +1,7 @@
 <?php
 require 'functions_ass1.php';
 //ambil data dr table
-$movie = query("SELECT * FROM tb_movie");
+$movie = get("SELECT * FROM tb_movie");
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +34,8 @@ $movie = query("SELECT * FROM tb_movie");
         <tr>
             <td><?=$i?></td>
             <td>
-                <a href="">Ubah | </a>
-                <a href="">Hapus</a>
+                <a href="ubah_ass1.php? id=<?= $row["id_movie"];?>">Ubah</a> |
+                <a href="hapus_ass1.php? id=<?= $row["id_movie"];?>">Hapus</a>
             </td>
             <td><img src="img/<?=$row["poster_movie"];?>" width="50"></td>
             <td><?=$row["name_movie"];?></td>
