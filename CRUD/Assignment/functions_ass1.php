@@ -57,4 +57,11 @@ function ubah($data){
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
+function search($keyword){
+    $query = "SELECT * FROM tb_movie WHERE 
+    name_movie LIKE '%$keyword%' OR
+    genre_movie LIKE '%$keyword%' OR
+    distributor_movie LIKE '%$keyword%' ";
+    return get($query);
+}
 ?>

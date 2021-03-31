@@ -2,6 +2,11 @@
 require 'functions_ass1.php';
 //ambil data dr table
 $movie = get("SELECT * FROM tb_movie");
+
+//jika tombol search ditekan
+if (isset($_POST["search"])){
+    $movie = search($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +22,11 @@ $movie = get("SELECT * FROM tb_movie");
 <body>
 <h1>Movies</h1>
     <a href="tambah_ass1.php">Add Movie</a>
+    <p>
+    <form action="" method="post">
+    <input type="text" name="keyword" size="40" autofocus placeholder="Search Here..." autocomplete="off">
+    <button type="submit" name="search">Search</button>
+    </form>
     <p>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>

@@ -2,6 +2,11 @@
 require 'functions.php';
 //ambil data dr table
 $siswa = get("SELECT * FROM tb_siswa");
+
+//jika tombol search ditekan
+if (isset($_POST["search"])){
+    $siswa = search($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +22,11 @@ $siswa = get("SELECT * FROM tb_siswa");
 <body>
     <h1>Daftar Siswa</h1>
     <a href="tambah.php">Tambah Data Siswa</a>
+    <p>
+    <form action="" method="post">
+    <input type="text" name="keyword" size="40" autofocus placeholder="Search Here..." autocomplete="off">
+    <button type="submit" name="search">Search</button>
+    </form>
     <p>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
